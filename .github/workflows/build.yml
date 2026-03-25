@@ -26,8 +26,11 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Dump env for debugging
+        run: echo "JAVA_OPTS=$JAVA_OPTS" && echo "GRADLE_OPTS=$GRADLE_OPTS" && echo "ANDROID_HOME=$ANDROID_HOME"
+
       - name: Build debug APK
-        run: bash gradlew assembleDebug
+        run: bash gradlew assembleDebug --info --stacktrace 2>&1 | tail -100
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
