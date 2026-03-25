@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="📊 ChartRecorder"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/accent_red"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ready…"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"
+            android:background="#33FFFFFF" />
+
+        <!-- ═══ RECORDING MODE ═══ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recording Mode"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleRecordingMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModeScreen"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📱 Screen"
+                android:textColor="@color/text_primary"
+                app:strokeColor="@color/accent_red" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModeRear"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📷 Rear Camera"
+                android:textColor="@color/text_primary"
+                app:strokeColor="@color/accent_red" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <!-- Mode description -->
+        <TextView
+            android:id="@+id/tvModeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Records your screen + front camera bubble"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:background="#33FFFFFF" />
+
+        <!-- ═══ FACE BUBBLE ═══ -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchFaceBubble"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Show Face Bubble"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:checked="true"
+            app:thumbTint="@color/accent_red"
+            app:trackTint="@color/surface_card" />
+
+        <!-- Bubble Size Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Bubble Size (80dp – 200dp)"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+        <!-- Bubble Size Slider -->
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderBubbleSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:valueFrom="80"
+            android:valueTo="200"
+            android:stepSize="10"
+            android:value="120"
+            app:thumbColor="@color/accent_red"
+            app:trackColorActive="@color/accent_red"
+            app:trackColorInactive="@color/surface_card" />
+
+        <!-- Record Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRecord"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="28dp"
+            android:text="🔴 START RECORDING"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:backgroundTint="@color/green_ready"
+            app:cornerRadius="16dp" />
+
+        <!-- Instructions block -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            android:background="@drawable/instructions_bg"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvInstructionsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How to use (Screen Mode):"
+                android:textColor="@color/accent_red"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvInstructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="1. Toggle face bubble &amp; set size\n2. Tap START RECORDING\n3. Grant all permissions\n4. App minimizes automatically\n5. Open TradingView or any chart app\n6. Your screen, voice &amp; face are recorded\n7. Pull down notification → tap STOP\n8. MP4 saved to Movies/ChartRecorder/"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

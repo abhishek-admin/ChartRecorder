@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Backgrounds -->
+    <color name="bg_dark">#1A1A2E</color>
+    <color name="surface_card">#16213E</color>
+    <color name="instructions_color">#0F3460</color>
+
+    <!-- Accent -->
+    <color name="accent_red">#E94560</color>
+    <color name="accent_purple">#533483</color>
+    <color name="green_ready">#1DB954</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#8899AA</color>
+
+    <!-- System bars -->
+    <color name="status_bar">#1A1A2E</color>
+</resources>
